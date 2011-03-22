@@ -61,6 +61,7 @@ out.TDTLOCKFILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
 out.CIRCUIT_PATH = 'Z:\sshanbhag\TytoLogy\toolbox\work\2.0\TDTToolbox\Circuits\RX6\50KHz';
 out.CIRCUIT_NAME = 'RZ6_RefStimResponseFiltered';
 out.IODEVNUM = 1;
+out.BK_PRESSURE_FILE = '';
 %------------------------------------------------------------------------
 
 
