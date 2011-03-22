@@ -53,7 +53,7 @@ function out = SingleMicCal_Configuration
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 out.CONFIGNAME = 'RZ6';
-out.IOFUNCTION = @RZ6D1calibration_io;
+out.IOFUNCTION = @RZ6calibration_io;
 out.IOINITFUNCTION = @RZ6init;
 out.TYTOLOGY_ROOT_PATH = 'C:\TytoLogy';
 out.TYTOLOGY_SETTINGS_PATH = TytoLogySettingsPath;
