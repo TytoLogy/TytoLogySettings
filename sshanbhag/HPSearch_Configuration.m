@@ -82,7 +82,9 @@ out.TDTLOCKFILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
 
 
 
-
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
 %------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -104,5 +106,236 @@ out.TDTLOCKFILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
 % out.TYTOLOGY_PROTOCOL_PATH = [out.TYTOLOGY_SETTINGS_PATH 'Protocols\'];
 % out.TDTLOCKFILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
 %------------------------------------------------------------------------
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+
+
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+% %------------------------------------------------------------------------
+% % FROM HPSEARCH_CONFIGURATION_PENAC.m
+% %------------------------------------------------------------------------
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % This is for using RX_8(2) for output (headphones) 
+% % and RX5 + medusa for spike input.
+% % used for single-channel recording
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% out.CONFIGNAME = 'MEDUSA+HEADPHONES';
+% out.TDT = 'TDT:1CHANNEL+MASKER';
+% out.INDEV = 'INDEV:MEDUSA'; 
+% out.OUTDEV = 'OUTDEV:HEADPHONES+MASKER';
+% out.IOFUNCTION = @headphonestim_medusarec_1chan;
+% out.TDTSETFUNCTION = @HPSearch_medusasettings;
+% out.DATAPATH = pwd;
+% out.CALDATAPATH = 'C:\TytoLogy\Calibration\CalibrationData';
+% out.TYTOLOGY_ROOT_PATH = 'C:\TytoLogy';
+% out.TYTOLOGY_SETTINGS_PATH = TytoLogySettingsPath;
+% out.TYTOLOGY_PROTOCOL_PATH = [out.TYTOLOGY_SETTINGS_PATH 'Protocols\'];
+% out.TDTLOCKFILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
+% %------------------------------------------------------------------------
+% 
+% %------------------------------------------------------------------------
+% % FROM HPSEARCH_CONFIGURATION_PENAH.m
+% %------------------------------------------------------------------------
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % This is for using RX_8(2) for output (headphones) 
+% % and RX5 + medusa for spike input.
+% % used for single-channel recording
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% out.CONFIGNAME = 'MEDUSA+HEADPHONES';
+% out.TDT = 'TDT:1CHANNEL+MASKER';
+% out.INDEV = 'INDEV:MEDUSA'; 
+% out.OUTDEV = 'OUTDEV:HEADPHONES+MASKER';
+% out.IOFUNCTION = @headphonestim_medusarec_1chan;
+% out.TDTSETFUNCTION = @HPSearch_medusasettings;
+% out.DATAPATH = pwd;
+% out.CALDATAPATH = 'H:\Code\TytoLogy\Calibration\CalibrationData';
+% out.TYTOLOGY_ROOT_PATH = 'H:\Code\TytoLogy';
+% out.TYTOLOGY_SETTINGS_PATH = TytoLogySettingsPath;
+% out.TYTOLOGY_PROTOCOL_PATH = [out.TYTOLOGY_SETTINGS_PATH 'Protocols\'];
+% out.TDTLOCKFILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
+% %------------------------------------------------------------------------
+%
+% % %------------------------------------------------------------------------
+% % FROM HPSearch_Configuration_medusa_1chan_mask.m
+% %------------------------------------------------------------------------
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % This is for using RX_8(2) for output (headphones) 
+% % and RX5 + medusa for spike input.
+% % used for single-channel recording
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% out.CONFIGNAME = 'MEDUSA+HEADPHONES';
+% out.TDT = 'TDT:1CHANNEL+MASKER';
+% out.INDEV = 'INDEV:MEDUSA'; 
+% out.OUTDEV = 'OUTDEV:HEADPHONES+MASKER';
+% out.IOFUNCTION = @headphonestim_medusarec_1chan;
+% out.TDTSETFUNCTION = @HPSearch_medusasettings;
+% out.DATAPATH = pwd;
+% out.CALDATAPATH = 'H:\Code\TytoLogy\Calibration\CalibrationData';
+% out.TYTOLOGY_ROOT_PATH = 'H:\Code\TytoLogy';
+% out.TYTOLOGY_SETTINGS_PATH = TytoLogySettingsPath;
+% out.TYTOLOGY_PROTOCOL_PATH = [out.TYTOLOGY_SETTINGS_PATH 'Protocols\'];
+% out.TDTLOCKFILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
+% %------------------------------------------------------------------------
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+
+
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+% FROM HPSearch_Configuration_RX8ONLY_C.m
+% %------------------------------------------------------------------------
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % This is for using RX_8 for both input and output
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% out.CONFIGNAME = 'RX8_IO';
+% out.TDT = 'TDT:SINGLECHANNEL_RX8ACQ';
+% out.INDEV = 'INDEV:IODEV'; 
+% out.OUTDEV = [];   % empty [] since indev is also outdev
+% out.IOFUNCTION = @headphone_spikeio;
+% out.TDTSETFUNCTION = @HPSearch_RX8iosettings;
+% out.DATAPATH = pwd;
+% out.CALDATAPATH = 'C:\TytoLogy\Calibration\CalibrationData';
+% out.TYTOLOGY_ROOT_PATH = 'C:\TytoLogy\';
+% out.TYTOLOGY_SETTINGS_PATH = TytoLogySettingsPath;
+% out.TYTOLOGY_PROTOCOL_PATH = [out.TYTOLOGY_SETTINGS_PATH 'Protocols\'];
+% out.TDTLOCKFILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
+% %------------------------------------------------------------------------
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+
+
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+% FROM HPSearch_Configuration_RX8ONLY.m
+% %------------------------------------------------------------------------
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % This is for using RX_8 for both input and output
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% out.CONFIGNAME = 'RX8_IO';
+% out.TDT = 'TDT:SINGLECHANNEL_RX8ACQ';
+% out.INDEV = 'INDEV:IODEV'; 
+% out.OUTDEV = [];   % empty [] since indev is also outdev
+% out.IOFUNCTION = @headphone_spikeio;
+% out.TDTSETFUNCTION = @HPSearch_RX8iosettings;
+% out.DATAPATH = pwd;
+% out.CALDATAPATH = 'H:\Code\TytoLogy\Calibration\CalibrationData';
+% out.TYTOLOGY_ROOT_PATH = 'H:\Code\TytoLogy\';
+% out.TYTOLOGY_SETTINGS_PATH = TytoLogySettingsPath;
+% out.TYTOLOGY_PROTOCOL_PATH = [out.TYTOLOGY_SETTINGS_PATH 'Protocols\'];
+% out.TDTLOCKFILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
+% %------------------------------------------------------------------------
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+
+
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+% FROM HPSearch_Configuration_working.m
+% %------------------------------------------------------------------------
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % This is for using RX_8(2) for output (headphones) 
+% % and RX5 + medusa for spike input.
+% % used for single-channel recording
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% out.CONFIGNAME = 'MEDUSA+HEADPHONES';
+% out.TDT = 'TDT:1CHANNEL+MASKER';
+% out.INDEV = 'INDEV:MEDUSA'; 
+% out.OUTDEV = 'OUTDEV:HEADPHONES+MASKER';
+% out.IOFUNCTION = @headphonestim_medusarec_1chan;
+% out.TDTSETFUNCTION = @HPSearch_medusasettings;
+% out.DATAPATH = pwd;
+% out.CALDATAPATH = 'H:\Code\TytoLogy\Calibration\CalibrationData';
+% out.TYTOLOGY_ROOT_PATH = 'H:\Code\TytoLogy';
+% out.TYTOLOGY_SETTINGS_PATH = TytoLogySettingsPath;
+% out.TYTOLOGY_PROTOCOL_PATH = [out.TYTOLOGY_SETTINGS_PATH 'Protocols\'];
+% out.TDTLOCKFILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
+% %------------------------------------------------------------------------
+% %------------------------------------------------------------------------
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % This is for using RX_8(2) for output (headphones) 
+% % and RX5 + medusa for spike input.
+% % Used by SJS during testing/development
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % out.CONFIGNAME = 'MEDUSA+HEADPHONES';
+% % out.TDT = 'TDT:4CHANNEL+MASKER';
+% % out.INDEV = 'INDEV:MEDUSA4'; 
+% % out.OUTDEV = 'OUTDEV:HEADPHONES+MASKER';
+% % out.IOFUNCTION = @headphonestim_medusarec;
+% % out.TDTSETFUNCTION = @HPSearch_medusasettings;
+% % out.DATAPATH = pwd;
+% % out.CALDATAPATH = 'H:\Code\TytoLogy\main\Calibration\CalibrationData';
+% % out.TYTOLOGY_ROOT_PATH = 'H:\Code\TytoLogy';
+% % out.TYTOLOGY_SETTINGS_PATH = TytoLogySettingsPath;
+% % out.TYTOLOGY_PROTOCOL_PATH = [out.TYTOLOGY_SETTINGS_PATH 'Protocols\'];
+% % out.TDTLOCKFILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
+% %------------------------------------------------------------------------
+% %------------------------------------------------------------------------
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % This is for using RX_8(2) for output (headphones) 
+% % and RX5 + medusa for spike input.
+% % This is the default setup for 
+% % the Pena Lab Free-field rig
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % out.CONFIGNAME = 'MEDUSA+HEADPHONES';
+% % out.TDT = 'TDT:4CHANNEL+MASKER';
+% % out.INDEV = 'INDEV:MEDUSA4'; 
+% % out.OUTDEV = 'OUTDEV:HEADPHONES+MASKER';
+% % out.IOFUNCTION = @headphonestim_medusarec;
+% % out.TDTSETFUNCTION = @HPSearch_medusasettings;
+% % out.DATAPATH = pwd;
+% % out.CALDATAPATH = 'C:\Users\TytoLogy\main\Calibration\CalibrationData';
+% % out.TYTOLOGY_ROOT_PATH = 'C:\Users\TytoLogy\';
+% % out.TYTOLOGY_SETTINGS_PATH = TytoLogySettingsPath;
+% % out.TYTOLOGY_PROTOCOL_PATH = [out.TYTOLOGY_SETTINGS_PATH 'Protocols\'];
+% % out.TDT_LOCK_FILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
+% %------------------------------------------------------------------------
+% %------------------------------------------------------------------------
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % This is for using RX_8 for both input and output
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % out.CONFIGNAME = 'RX8_IO'
+% % out.TDT = 'TDT:SINGLECHANNEL';
+% % out.INDEV = 'INDEV:IODEV'; 
+% % out.OUTDEV = [];   % empty [] since indev is also outdev
+% % out.IOFUNCTION = @headphone_spikeio;
+% % out.TDTSETFUNCTION = @HPSearch_RX8iosettings
+% % out.DATAPATH = 'C:\Users\Data';
+% % out.CALDATAPATH = 'C:\Users\CalibrationData';
+% % out.TYTOLOGY_ROOT_PATH = 'H:\Code\TytoLogy\';
+% % out.TYTOLOGY_SETTINGS_PATH = TytoLogySettingsPath;
+% % out.TYTOLOGY_PROTOCOL_PATH = [out.TYTOLOGY_SETTINGS_PATH 'Protocols\'];
+% % out.TDT_LOCK_FILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
+% %------------------------------------------------------------------------
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+
+
+
+
 
 
