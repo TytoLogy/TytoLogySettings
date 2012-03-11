@@ -14,12 +14,19 @@
 %	2 November, 2010 (SJS)
 % 
 % Revisions:
+%	11 Mar 2012 (SJS): new branch, 1
+%		-	updated paths to match current working branches
 %--------------------------------------------------------------------------
 
 % different paths depending on OS
 PCWINroot = 'C:\TytoLogy\TytoSettings\';
 MACroot = '/Users/';
 LINUXroot = '/home/';
+
+% root drive for pc
+TYTODRIVE = 'X';
+
+TYTOBASE = [TYTODRIVE ':\Code\Matlab\dev\TytoLogy'];
 
 % get os type (mac, pcwin, linux) and username
 os_type = computer;
@@ -46,16 +53,21 @@ p = [rootp name filesep];
 %*************************************************************************
 
 % Toolbox path
-toolboxpath = 'Z:\sshanbhag\TytoLogy\toolbox\work\2.0';
+toolboxpath = [TYTOBASE '\Toolbox'];
 
 % Headphone Calibration Path
-hpcalpath = 'Z:\sshanbhag\TytoLogy\Calibration\HeadphoneCal\work\2.0';
+hpcalpath = [TYTOBASE '\Calibration\HeadphoneCal\work\2.0'];
 
 % Microphone Calibration Path
-miccalpath = 'Z:\sshanbhag\TytoLogy\Calibration\MicrophoneCal\work\2.0';
+miccalpath = [TYTOBASE '\Calibration\MicrophoneCal\work\3.00'];
+
+% Speaker Calibration Path
+spkrcalpath = [TYTOBASE '\Calibration\SpeakerCal\work\1.0'];
 
 % HPSearch Path
-hpsearchpath = 'Z:\sshanbhag\TytoLogy\Experiments\HPSearch\work\2.0';
+hpsearchpath = [TYTOBASE '\Experiments\HPSearch\3\3.0'];
+	
+
 
 %*************************************************************************
 % 	add paths
@@ -63,6 +75,7 @@ hpsearchpath = 'Z:\sshanbhag\TytoLogy\Experiments\HPSearch\work\2.0';
 
 addpath(hpcalpath, '-BEGIN');
 addpath(miccalpath, '-BEGIN');
+addpath(spkrcalpath, '-BEGIN');
 addpath(hpsearchpath, '-BEGIN');
 
 % need to generate subdirectory paths for toolbox
