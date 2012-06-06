@@ -31,7 +31,7 @@ function out = HPSearch_Configuration
 
 %--------------------------------------------------------------------------
 % Sharad J. Shanbhag
-% sharad.shanbhag@einstein.yu.edu
+% sshanbhag@neomed.edu
 %--------------------------------------------------------------------------
 % Revision History
 %	2 December, 2009 (SJS):
@@ -44,6 +44,9 @@ function out = HPSearch_Configuration
 % 		- changed TDT_LOCK_FILE to TDTLOCKFILE
 % 		- changed TytosettingsPath to TytoLogySettingsPath
 %	2 Nov 2010 (SJS): some minor changes to comments
+%	1 Mar 2012 (SJS)
+% 		- updated email
+% 		- created new configuration for MJ Rosen's all-RZ, loudspeaker setup
 %--------------------------------------------------------------------------
 % TO DO:	there's gotta be a better way to manage 
 % 			different hardware setups.... HELP!!!!  
@@ -53,6 +56,32 @@ function out = HPSearch_Configuration
 % UNCOMMENT SECTION THAT WILL BE USED & 
 % COMMENT OUT THE INAPPROPRIATE BITS!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This is for using RZ_6(1) for output (speaker) 
+% and RZ5 + medusa for spike input.
+% used for multi-channel recording
+%
+% Used for Merri Rosen's lab and should also work
+% for Sanes lab setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+out.CONFIGNAME = 'RZ6_RZ5';
+out.TDT = 'TDT:RZ-MJR';
+out.INDEV = 'INDEV:RZ5_MEDUSA16'; 
+out.OUTDEV = 'OUTDEV:LOUDSPEAKER_RZ6';
+out.IOFUNCTION = @speakerstim_medusarec_16chan;
+out.TDTSETFUNCTION = @HPSearch_medusasettings_16chan;
+out.DATAPATH = pwd;
+out.CALDATAPATH = 'C:\TytoLogy\Calibration\CalibrationData';
+out.TYTOLOGY_ROOT_PATH = 'C:\TytoLogy';
+out.TYTOLOGY_SETTINGS_PATH = TytoLogySettingsPath;
+out.TYTOLOGY_PROTOCOL_PATH = [out.TYTOLOGY_SETTINGS_PATH 'Protocols\'];
+out.TDTLOCKFILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
+out.TYTOLOGY_SCRIPT_PATH = [out.TYTOLOGY_SETTINGS_PATH 'Scripts\']
+%------------------------------------------------------------------------
 
 
 %------------------------------------------------------------------------
@@ -66,6 +95,7 @@ function out = HPSearch_Configuration
 % for Sanes lab setup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%{
 out.CONFIGNAME = 'RX6_RZ5';
 out.TDT = 'TDT:1CHANNEL+MASKER';
 out.INDEV = 'INDEV:RZ5_MEDUSA1'; 
@@ -78,6 +108,7 @@ out.TYTOLOGY_ROOT_PATH = 'C:\TytoLogy';
 out.TYTOLOGY_SETTINGS_PATH = TytoLogySettingsPath;
 out.TYTOLOGY_PROTOCOL_PATH = [out.TYTOLOGY_SETTINGS_PATH 'Protocols\'];
 out.TDTLOCKFILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
+%}
 %------------------------------------------------------------------------
 
 
@@ -93,6 +124,7 @@ out.TDTLOCKFILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
 % used for single-channel recording
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%{
 % out.CONFIGNAME = 'MEDUSA+HEADPHONES';
 % out.TDT = 'TDT:1CHANNEL+MASKER';
 % out.INDEV = 'INDEV:MEDUSA'; 
@@ -105,6 +137,7 @@ out.TDTLOCKFILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
 % out.TYTOLOGY_SETTINGS_PATH = TytoLogySettingsPath;
 % out.TYTOLOGY_PROTOCOL_PATH = [out.TYTOLOGY_SETTINGS_PATH 'Protocols\'];
 % out.TDTLOCKFILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
+%}
 %------------------------------------------------------------------------
 %------------------------------------------------------------------------
 %------------------------------------------------------------------------
