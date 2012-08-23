@@ -33,7 +33,7 @@ LINUXroot = '/home/';
 
 % root drive for pc
 TYTODRIVE = 'C';
-TYTOBASE = [TYTODRIVE ':\Users\sshanbhag\Code\Matlab\dev\TytoLogy'];
+TYTOBASE = [TYTODRIVE ':\Users\sshanbhag\Code\Matlab\TytoLogy'];
 
 % get os type (mac, pcwin, linux) and username
 os_type = computer;
@@ -58,6 +58,9 @@ p = [rootp name filesep];
 % 	Define some paths to toolbox, calibration, HPSearch
 %*************************************************************************
 
+% Utils path
+utilspath = [TYTOBASE '\Toolbox\UtilitiesToolbox\GeneralUtilities'];
+
 % Toolbox path
 toolboxpath = [TYTOBASE '\Toolbox'];
 
@@ -81,7 +84,7 @@ nicalpath = [TYTOBASE '\Calibration\NICal'];
 %*************************************************************************
 % 	add paths
 %*************************************************************************
-
+addpath(utilspath, '-BEGIN');
 addpath(hpcalpath, '-BEGIN');
 addpath(miccalpath, '-BEGIN');
 addpath(spkrcalpath, '-BEGIN');
@@ -92,6 +95,7 @@ addpath(nicalpath, '-BEGIN');
 
 % need to generate subdirectory paths for toolbox
 nettoolboxpath = genpath(toolboxpath);
+nettoolboxpath = remove_gitpaths(nettoolboxpath);
 addpath(nettoolboxpath, '-BEGIN');
 
 
