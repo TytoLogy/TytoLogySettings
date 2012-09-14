@@ -87,7 +87,7 @@ nicalpath = [TYTOBASE '\Calibration\NICal'];
 addpath(utilspath, '-BEGIN');
 addpath(hpcalpath, '-BEGIN');
 addpath(miccalpath, '-BEGIN');
-addpath(spkrcalpath, '-BEGIN');
+%addpath(spkrcalpath, '-BEGIN');
 for n = 1:length(hpsearchpath)
 	addpath(hpsearchpath{n}, '-BEGIN');
 end
