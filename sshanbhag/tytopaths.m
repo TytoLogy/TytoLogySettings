@@ -25,15 +25,13 @@
 % different paths depending on OS
 
 %***** for installed version
-%PCWINroot = 'C:\TytoLogy\TytoSettings\';
-% for sharad's dev tree
-PCWINroot = 'C:\Users\sshanbhag\Code\Matlab\TytoLogy\TytoLogySettings\';
+PCWINroot = 'C:\TytoLogy\TytoLogySettings\';
 MACroot = '/Users/';
 LINUXroot = '/home/';
 
 % root drive for pc
 TYTODRIVE = 'C';
-TYTOBASE = [TYTODRIVE ':\Users\sshanbhag\Code\Matlab\TytoLogy'];
+TYTOBASE = [TYTODRIVE ':\TytoLogy'];
 
 % get os type (mac, pcwin, linux) and username
 os_type = computer;
