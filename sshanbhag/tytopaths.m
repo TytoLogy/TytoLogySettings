@@ -20,66 +20,89 @@
 %		- add things for NICal on Calibrator machine
 %		- added line for HPSearch Functions directory
 %     - updated for newer development (git/github) management config
+%	5 Dec 2012 (SJS):
+% 		-	modifications to allow use on non-PC systems
 %--------------------------------------------------------------------------
 
-% different paths depending on OS
+TOOLBOX_NAMES =	{	'AudioToolbox', ...
+							'BinaryFileToolbox', ...
+							'structDlgToolbox', ...
+							'TDTToolbox', ...
+							'TytoLogyToolbox', ...
+							'UtilitiesToolbox', ...
+						};
 
-%***** for installed version
-%PCWINroot = 'C:\TytoLogy\TytoSettings\';
-% for sharad's dev tree
-PCWINroot = 'C:\Users\sshanbhag\Code\Matlab\TytoLogy\TytoLogySettings\';
-MACroot = '/Users/';
-LINUXroot = '/home/';
-
-% root drive for pc
-TYTODRIVE = 'C';
-TYTOBASE = [TYTODRIVE ':\Users\sshanbhag\Code\Matlab\TytoLogy'];
-
-% get os type (mac, pcwin, linux) and username
+% get os type (mac, pcwin, linux)
 os_type = computer;
-name = getenv('USERNAME');
 
-% different settings based on OS
-switch os_type
-	case 'PCWIN'
-		rootp = PCWINroot;
-	case 'MAC'
-		rootp = MACroot;
-	case 'GLNXA64'
-		rootp = LINUXroot;
-	otherwise
-		error([mfilename ': ' os_type ' is unknown computer'])
+% different paths depending on OS
+if ispc
+	%***** for installed version
+	%PCWINroot = 'C:\TytoLogy\TytoSettings\';
+	% for sharad's dev tree
+	uname = getenv('USERNAME');
+	PCWINroot = ['C:\Users\' uname '\Code\Matlab\TytoLogy\TytoLogySettings\'];
+else
+	uname = getenv('USER');
+	MACroot = ['/Users/' uname '/Work/Code/Matlab/dev/TytoLogy/TytoLogySettings/'];
+	LINUXroot = '/home/';
+end
+
+if ispc
+	% root drive for pc
+	TYTODRIVE = 'C';
+	TYTOBASE = [TYTODRIVE ':\Users\' uname '\Code\Matlab\TytoLogy'];
+	TOOLBASE = [TYTODRIVE ':\Users\' uname '\Code\Matlab\TytoLogy'];
+	rootp = PCWINroot;
+elseif ismac
+	TYTOBASE = ['/Users/' uname '/Work/Code/Matlab/dev/TytoLogy'];
+	TOOLBASE = ['/Users/' uname '/Work/Code/Matlab/dev/Toolboxes'];
+	rootp = MACroot;
+elseif isunix
+	TYTOBASE = ['/Users/' uname '/Work/Code/Matlab/dev/TytoLogy'];
+	TOOLBASE = ['/Users/' uname '/Work/Code/Matlab/dev/Toolboxes'];
+	rootp = LINUXroot;	
+else
+	error([mfilename ': ' os_type ' is unknown computer'])
 end
 
 % full path
-p = [rootp name filesep];
+p = [rootp uname filesep];
 
 %*************************************************************************
 % 	Define some paths to toolbox, calibration, HPSearch
 %*************************************************************************
-
-% Utils path
-utilspath = [TYTOBASE '\Toolbox\UtilitiesToolbox\GeneralUtilities'];
-
-% Toolbox path
-toolboxpath = [TYTOBASE '\Toolbox'];
-
-% Headphone Calibration Path
-hpcalpath = [TYTOBASE '\Calibration\HeadphoneCal'];
-
-% Microphone Calibration Path
-miccalpath = [TYTOBASE '\Calibration\MicrophoneCal'];
-
-% Speaker Calibration Path
-spkrcalpath = [TYTOBASE '\Calibration\SpeakerCal'];
-
-% HPSearch Path
-hpsearchpath = {	[TYTOBASE '\Experiments\HPSearch']	, ...
-						[TYTOBASE '\Experiments\HPSearch\Functions']	, ...
-					};
-				
-% NICal Calibration Path
-nicalpath = [TYTOBASE '\Calibration\NICal'];
+if ispc
+	% Utils path
+	utilspath = [TYTOBASE '\Toolbox\UtilitiesToolbox\GeneralUtilities'];
+	% Headphone Calibration Path
+	hpcalpath = [TYTOBASE '\Calibration\HeadphoneCal'];
+	% Microphone Calibration Path
+	miccalpath = [TYTOBASE '\Calibration\MicrophoneCal'];
+	% Speaker Calibration Path
+	spkrcalpath = [TYTOBASE '\Calibration\SpeakerCal'];
+	% HPSearch Path
+	hpsearchpath = {	[TYTOBASE '\Experiments\HPSearch']	, ...
+							[TYTOBASE '\Experiments\HPSearch\Functions']	, ...
+						};
+	% NICal Calibration Path
+	nicalpath = [TYTOBASE '\Calibration\NICal'];
+else
+	% Utils path
+	utilspath = [TOOLBASE '/UtilitiesToolbox/GeneralUtilities'];
+	% Headphone Calibration Path
+	hpcalpath = [TYTOBASE '/Calibration/HeadphoneCal'];
+	% Microphone Calibration Path
+	miccalpath = [TYTOBASE '/Calibration/MicrophoneCal'];
+	% Speaker Calibration Path
+	spkrcalpath = [TYTOBASE '/Calibration/SpeakerCal'];
+	% HPSearch Path
+	hpsearchpath = {	[TYTOBASE '/Experiments/HPSearch']	, ...
+							[TYTOBASE '/Experiments/HPSearch/Functions']	, ...
+						};
+	% NICal Calibration Path
+	nicalpath = [TYTOBASE '/Calibration/NICal'];	
+end
 
 %*************************************************************************
 % 	add paths
@@ -94,9 +117,14 @@ end
 addpath(nicalpath, '-BEGIN');
 
 % need to generate subdirectory paths for toolbox
-nettoolboxpath = genpath(toolboxpath);
-nettoolboxpath = remove_gitpaths(nettoolboxpath);
-addpath(nettoolboxpath, '-BEGIN');
+for n = 1:length(TOOLBOX_NAMES)
+	tmppath = genpath([TOOLBASE filesep TOOLBOX_NAMES{n}]);
+	tmppath = remove_gitpaths(tmppath);
+	addpath(tmppath);
+end
+% nettoolboxpath = genpath(toolboxpath);
+% nettoolboxpath = remove_gitpaths(nettoolboxpath);
+% addpath(nettoolboxpath, '-BEGIN');
 
 
 
