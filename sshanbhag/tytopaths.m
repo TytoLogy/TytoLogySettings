@@ -8,7 +8,7 @@
 
 %--------------------------------------------------------------------------
 % Sharad Shanbhag
-% sshanbhag@neoucom.edu
+% sshanbhag@neomed.edu
 %--------------------------------------------------------------------------
 % Created:
 %	2 November, 2010 (SJS)
@@ -24,6 +24,12 @@
 % 		-	modifications to allow use on non-PC systems
 %--------------------------------------------------------------------------
 
+%--------------------------------------------------------------------------
+%--------------------------------------------------------------------------
+%% define things
+%--------------------------------------------------------------------------
+%--------------------------------------------------------------------------
+% define Toolboxes to include in path
 TOOLBOX_NAMES =	{	'AudioToolbox', ...
 							'BinaryFileToolbox', ...
 							'structDlgToolbox', ...
@@ -42,23 +48,19 @@ if ispc
 	% for sharad's dev tree
 	uname = getenv('USERNAME');
 	PCWINroot = ['C:\Users\' uname '\Code\Matlab\TytoLogy\TytoLogySettings\'];
-else
-	uname = getenv('USER');
-	MACroot = ['/Users/' uname '/Work/Code/Matlab/dev/TytoLogy/TytoLogySettings/'];
-	LINUXroot = '/home/';
-end
-
-if ispc
 	% root drive for pc
 	TYTODRIVE = 'C';
 	TYTOBASE = [TYTODRIVE ':\Users\' uname '\Code\Matlab\TytoLogy'];
-	TOOLBASE = [TYTODRIVE ':\Users\' uname '\Code\Matlab\TytoLogy'];
+	TOOLBASE = [TYTODRIVE ':\Users\' uname '\Code\Matlab\TytoLogy\Toolboxes'];
 	rootp = PCWINroot;
 elseif ismac
+	uname = getenv('USER');
+	MACroot = ['/Users/' uname '/Work/Code/Matlab/dev/TytoLogy/TytoLogySettings/'];
 	TYTOBASE = ['/Users/' uname '/Work/Code/Matlab/dev/TytoLogy'];
 	TOOLBASE = ['/Users/' uname '/Work/Code/Matlab/dev/Toolboxes'];
 	rootp = MACroot;
 elseif isunix
+	LINUXroot = '/home/';
 	TYTOBASE = ['/Users/' uname '/Work/Code/Matlab/dev/TytoLogy'];
 	TOOLBASE = ['/Users/' uname '/Work/Code/Matlab/dev/Toolboxes'];
 	rootp = LINUXroot;	
@@ -66,15 +68,14 @@ else
 	error([mfilename ': ' os_type ' is unknown computer'])
 end
 
+
 % full path
 p = [rootp uname filesep];
 
-%*************************************************************************
 % 	Define some paths to toolbox, calibration, HPSearch
-%*************************************************************************
 if ispc
 	% Utils path
-	utilspath = [TYTOBASE '\Toolbox\UtilitiesToolbox\GeneralUtilities'];
+	utilspath = [TOOLBASE '\UtilitiesToolbox\GeneralUtilities'];
 	% Headphone Calibration Path
 	hpcalpath = [TYTOBASE '\Calibration\HeadphoneCal'];
 	% Microphone Calibration Path
@@ -104,9 +105,12 @@ else
 	nicalpath = [TYTOBASE '/Calibration/NICal'];	
 end
 
-%*************************************************************************
-% 	add paths
-%*************************************************************************
+%--------------------------------------------------------------------------
+%--------------------------------------------------------------------------
+%% 	add paths
+%--------------------------------------------------------------------------
+%--------------------------------------------------------------------------
+
 addpath(utilspath, '-BEGIN');
 addpath(hpcalpath, '-BEGIN');
 addpath(miccalpath, '-BEGIN');
@@ -118,15 +122,12 @@ addpath(nicalpath, '-BEGIN');
 
 % need to generate subdirectory paths for toolbox
 for n = 1:length(TOOLBOX_NAMES)
+	% generate path to each toolbox directory
 	tmppath = genpath([TOOLBASE filesep TOOLBOX_NAMES{n}]);
+	% remove the paths to the .git code versioning directories
 	tmppath = remove_gitpaths(tmppath);
-	addpath(tmppath);
+	% add path
+	addpath(tmppath, '-BEGIN');
 end
-% nettoolboxpath = genpath(toolboxpath);
-% nettoolboxpath = remove_gitpaths(nettoolboxpath);
-% addpath(nettoolboxpath, '-BEGIN');
-
-
-
 
 
