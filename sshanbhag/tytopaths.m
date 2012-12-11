@@ -24,6 +24,7 @@
 % 		-	modifications to allow use on non-PC systems
 %--------------------------------------------------------------------------
 
+<<<<<<< HEAD
 %--------------------------------------------------------------------------
 %--------------------------------------------------------------------------
 %% define things
@@ -39,6 +40,22 @@ TOOLBOX_NAMES =	{	'AudioToolbox', ...
 						};
 
 % get os type (mac, pcwin, linux)
+=======
+% different paths depending on OS
+
+%***** for installed version
+%PCWINroot = 'C:\TytoLogy\TytoSettings\';
+% for sharad's dev tree
+PCWINroot = 'C:\Users\sshanbhag\Code\Matlab\TytoLogy\TytoLogySettings\';
+MACroot = '/Users/';
+LINUXroot = '/home/';
+
+% root drive for pc
+TYTODRIVE = 'C';
+TYTOBASE = [TYTODRIVE ':\Users\sshanbhag\Code\Matlab\TytoLogy'];
+
+% get os type (mac, pcwin, linux) and username
+>>>>>>> updates to settings
 os_type = computer;
 
 % different paths depending on OS
