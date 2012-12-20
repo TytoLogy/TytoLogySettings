@@ -46,7 +46,7 @@ os_type = computer;
 if ispc
 	uname = getenv('USERNAME');
 	%***** for installed version
-	PCWINroot = 'C:\TytoLogy\TytoSettings\';
+	PCWINroot = 'C:\TytoLogy\TytoLogySettings\';
 	% for sharad's dev tree
 	% PCWINroot = ['C:\Users\' uname '\Code\Matlab\TytoLogy\TytoLogySettings\'];
 	% root drive for pc
@@ -79,6 +79,7 @@ p = [rootp uname filesep];
 if ispc
 	% Utils path
 	utilspath = [TOOLBASE '\UtilitiesToolbox\GeneralUtilities'];
+	%{
 	% Headphone Calibration Path
 	hpcalpath = [TYTOBASE '\Calibration\HeadphoneCal'];
 	% Microphone Calibration Path
@@ -89,11 +90,13 @@ if ispc
 	hpsearchpath = {	[TYTOBASE '\Experiments\HPSearch']	, ...
 							[TYTOBASE '\Experiments\HPSearch\Functions']	, ...
 						};
+	%}
 	% NICal Calibration Path
 	nicalpath = [TYTOBASE '\Calibration\NICal'];
 else
 	% Utils path
 	utilspath = [TOOLBASE '/UtilitiesToolbox/GeneralUtilities'];
+	%{
 	% Headphone Calibration Path
 	hpcalpath = [TYTOBASE '/Calibration/HeadphoneCal'];
 	% Microphone Calibration Path
@@ -104,6 +107,7 @@ else
 	hpsearchpath = {	[TYTOBASE '/Experiments/HPSearch']	, ...
 							[TYTOBASE '/Experiments/HPSearch/Functions']	, ...
 						};
+	%}
 	% NICal Calibration Path
 	nicalpath = [TYTOBASE '/Calibration/NICal'];	
 end
@@ -115,12 +119,12 @@ end
 %--------------------------------------------------------------------------
 
 addpath(utilspath, '-BEGIN');
-addpath(hpcalpath, '-BEGIN');
-addpath(miccalpath, '-BEGIN');
-%addpath(spkrcalpath, '-BEGIN');
-for n = 1:length(hpsearchpath)
-	addpath(hpsearchpath{n}, '-BEGIN');
-end
+% addpath(hpcalpath, '-BEGIN');
+% addpath(miccalpath, '-BEGIN');
+% %addpath(spkrcalpath, '-BEGIN');
+% for n = 1:length(hpsearchpath)
+% 	addpath(hpsearchpath{n}, '-BEGIN');
+% end
 addpath(nicalpath, '-BEGIN');
 
 % need to generate subdirectory paths for toolbox
