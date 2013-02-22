@@ -90,6 +90,7 @@ for n = 1:length(hpsearchpath)
 	addpath(hpsearchpath{n}, '-BEGIN');
 end
 addpath(nicalpath, '-BEGIN');
+addpath(spkrcalpath, '-BEGIN');
 
 % need to generate subdirectory paths for toolbox
 nettoolboxpath = genpath(toolboxpath);
