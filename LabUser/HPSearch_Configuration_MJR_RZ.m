@@ -69,10 +69,10 @@ function out = HPSearch_Configuration
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 out.CONFIGNAME = 'RZ6_RZ5';
-out.TDT = 'TDT:RZ-MJR-SINGLE';
-out.INDEV = 'INDEV:RZ5_MEDUSA1'; 
+out.TDT = 'TDT:RZ-MJR';
+out.INDEV = 'INDEV:RZ5_MEDUSA16'; 
 out.OUTDEV = 'OUTDEV:LOUDSPEAKER_RZ6';
-out.IOFUNCTION = @speakerstim_medusarec_1chan;
+out.IOFUNCTION = @speakerstim_medusarec_16chan;
 out.TDTSETFUNCTION = @HPSearch_medusasettings_16chan;
 out.DATAPATH = pwd;
 out.CALDATAPATH = 'C:\TytoLogy\Calibration\CalibrationData';
@@ -80,7 +80,6 @@ out.TYTOLOGY_ROOT_PATH = 'C:\TytoLogy';
 out.TYTOLOGY_SETTINGS_PATH = TytoLogySettingsPath;
 out.TYTOLOGY_PROTOCOL_PATH = [out.TYTOLOGY_SETTINGS_PATH 'Protocols\'];
 out.TDTLOCKFILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
-out.TYTOLOGY_SCRIPT_PATH = [out.TYTOLOGY_SETTINGS_PATH 'Scripts\'];
 %------------------------------------------------------------------------
 
 
