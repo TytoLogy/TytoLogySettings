@@ -3,7 +3,7 @@ function out = NICal_Configuration
 % out = NICal_Configuration
 %------------------------------------------------------------------------
 % 
-% Sets initial configuration for the NICal program
+% Sets initial configuration for the SpeakerCal program
 % 
 % Comment out/in the settings for your configuration!
 % 
@@ -34,9 +34,6 @@ function out = NICal_Configuration
 %		-	added IOINIFUNCTION
 %	9 July, 2012 (SJS)
 % 	 -	 created NICal_Configuration from SpeakerCal_Configuration
-%	14 Oct 2014 (SJS):
-%	 -	some cleanup
-%	 -	added settings for data output path
 %--------------------------------------------------------------------------
 % TO DO:	there's gotta be a better way to manage 
 % 			different hardware setups.... HELP!!!!  
@@ -60,19 +57,14 @@ function out = NICal_Configuration
 out.CONFIGNAME = 'NI';
 out.IOFUNCTION = @nidaq_calibration_io;
 out.IOINITFUNCTION = @nidaq_aiao_init;
-out.TYTOLOGY_ROOT_PATH = 'C:\TytoLogy';
-<<<<<<< HEAD
-out.TYTOLOGY_SETTINGS_PATH = 'C:\TytoLogy\TytoLogySettings\';
-=======
+out.TYTOLOGY_ROOT_PATH = 'Z:\Code\Matlab\dev\TytoLogy';
 out.TYTOLOGY_SETTINGS_PATH = TytoLogySettingsPath;
->>>>>>> master
 out.TDTLOCKFILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
 out.CIRCUIT_PATH = '';
 out.CIRCUIT_NAME = '';
 out.IODEVNUM = 1;
 out.BK_PRESSURE_FILE = '';
 out.ATTENFUNCTION = @simPA5setatten;
-out.DEFAULT_OUTPUT_PATH = 'D:\';
 %------------------------------------------------------------------------
 
 

@@ -30,12 +30,11 @@
 %--------------------------------------------------------------------------
 %--------------------------------------------------------------------------
 % define Toolboxes to include in path
-TOOLBOX_NAMES =	{	'AudioToolbox', ...
+TOOLBOX_NAMES =	{	'UtilitiesToolbox', ...
+	'AudioToolbox', ...
 					'BinaryFileToolbox', ...
 					'structDlgToolbox', ...
-					'TDTToolbox', ...
 					'TytoLogyToolbox', ...
-					'UtilitiesToolbox', ...
                  };
 
 % get os type (mac, pcwin, linux)
@@ -77,6 +76,7 @@ p = [rootp uname filesep];
 
 % 	Define some paths to toolbox, calibration, HPSearch
 if ispc
+<<<<<<< HEAD
 	% Utils path
 	utilspath = [TOOLBASE '\UtilitiesToolbox\GeneralUtilities'];
 	%{
@@ -91,9 +91,27 @@ if ispc
 							[TYTOBASE '\Experiments\HPSearch\Functions']	, ...
 						};
 	%}
+=======
+% 	% Utils path
+ 	utilspath = [TOOLBASE '\UtilitiesToolbox\GeneralUtilities'];
+% 	% Headphone Calibration Path
+% 	hpcalpath = [TYTOBASE '\Calibration\HeadphoneCal'];
+% 	% Microphone Calibration Path
+% 	miccalpath = [TYTOBASE '\Calibration\MicrophoneCal'];
+% 	% Speaker Calibration Path
+% 	spkrcalpath = [TYTOBASE '\Calibration\SpeakerCal'];
+% 	% HPSearch Path
+% 	hpsearchpath = {	[TYTOBASE '\Experiments\HPSearch']	, ...
+% 							[TYTOBASE '\Experiments\HPSearch\Functions']	, ...
+% 						};
+>>>>>>> master
 	% NICal Calibration Path
 	nicalpath = [TYTOBASE '\Calibration\NICal'];
+	% FlatWav Calibration Path
+	flatwavpath = [TYTOBASE '/Calibration/FlatWav'];	
+
 else
+<<<<<<< HEAD
 	% Utils path
 	utilspath = [TOOLBASE '/UtilitiesToolbox/GeneralUtilities'];
 	%{
@@ -108,8 +126,24 @@ else
 							[TYTOBASE '/Experiments/HPSearch/Functions']	, ...
 						};
 	%}
+=======
+% 	% Utils path
+% 	utilspath = [TOOLBASE '/UtilitiesToolbox/GeneralUtilities'];
+% 	% Headphone Calibration Path
+% 	hpcalpath = [TYTOBASE '/Calibration/HeadphoneCal'];
+% 	% Microphone Calibration Path
+% 	miccalpath = [TYTOBASE '/Calibration/MicrophoneCal'];
+% 	% Speaker Calibration Path
+% 	spkrcalpath = [TYTOBASE '/Calibration/SpeakerCal'];
+% 	% HPSearch Path
+% 	hpsearchpath = {	[TYTOBASE '/Experiments/HPSearch']	, ...
+% 							[TYTOBASE '/Experiments/HPSearch/Functions']	, ...
+% 						};
+>>>>>>> master
 	% NICal Calibration Path
 	nicalpath = [TYTOBASE '/Calibration/NICal'];	
+	% FlatWav Calibration Path
+	flatwavpath = [TYTOBASE '/Calibration/FlatWav'];	
 end
 
 %--------------------------------------------------------------------------
@@ -118,7 +152,11 @@ end
 %--------------------------------------------------------------------------
 %--------------------------------------------------------------------------
 
+<<<<<<< HEAD
 addpath(utilspath, '-BEGIN');
+=======
+ addpath(utilspath, '-BEGIN');
+>>>>>>> master
 % addpath(hpcalpath, '-BEGIN');
 % addpath(miccalpath, '-BEGIN');
 % %addpath(spkrcalpath, '-BEGIN');
@@ -126,6 +164,7 @@ addpath(utilspath, '-BEGIN');
 % 	addpath(hpsearchpath{n}, '-BEGIN');
 % end
 addpath(nicalpath, '-BEGIN');
+addpath(flatwavpath, '-BEGIN');
 
 % need to generate subdirectory paths for toolbox
 for n = 1:length(TOOLBOX_NAMES)

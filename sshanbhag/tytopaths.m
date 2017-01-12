@@ -3,7 +3,7 @@
 %--------------------------------------------------------------------------
 % This sets up the TytoLogy paths
 %
-% FOR WORKING INSTALLATION
+% optogen
 %--------------------------------------------------------------------------
 
 %--------------------------------------------------------------------------
@@ -22,9 +22,9 @@
 %     - updated for newer development (git/github) management config
 %	5 Dec 2012 (SJS):
 % 		-	modifications to allow use on non-PC systems
+%	12 Jan 2017 (SJS): resolving conflicts in git branches
 %--------------------------------------------------------------------------
 
-<<<<<<< HEAD
 %--------------------------------------------------------------------------
 %--------------------------------------------------------------------------
 %% define things
@@ -39,32 +39,22 @@ TOOLBOX_NAMES =	{	'AudioToolbox', ...
 							'UtilitiesToolbox', ...
 						};
 
-% get os type (mac, pcwin, linux)
-=======
-% different paths depending on OS
-
-%***** for installed version
-%PCWINroot = 'C:\TytoLogy\TytoSettings\';
-% for sharad's dev tree
-PCWINroot = 'C:\Users\sshanbhag\Code\Matlab\TytoLogy\TytoLogySettings\';
-MACroot = '/Users/';
-LINUXroot = '/home/';
-
-% root drive for pc
-TYTODRIVE = 'C';
-TYTOBASE = [TYTODRIVE ':\Users\sshanbhag\Code\Matlab\TytoLogy'];
-
 % get os type (mac, pcwin, linux) and username
->>>>>>> updates to settings
 os_type = computer;
 
 % different paths depending on OS
 if ispc
-	%***** for installed version
-	%PCWINroot = 'C:\TytoLogy\TytoSettings\';
-	% for sharad's dev tree
+	% user name
 	uname = getenv('USERNAME');
-	PCWINroot = ['C:\Users\' uname '\Code\Matlab\TytoLogy\TytoLogySettings\'];
+	%---------------------------------------------------
+	%***** for installed version
+	%---------------------------------------------------
+	PCWINroot = 'C:\TytoLogy\TytoSettings\';
+	%---------------------------------------------------
+	% for sharad's dev tree
+	%---------------------------------------------------
+	% 	PCWINroot = ['C:\Users\' uname '\Code\Matlab\TytoLogy\TytoLogySettings\'];
+	%---------------------------------------------------	
 	% root drive for pc
 	TYTODRIVE = 'C';
 	TYTOBASE = [TYTODRIVE ':\Users\' uname '\Code\Matlab\TytoLogy'];
@@ -84,7 +74,6 @@ elseif isunix
 else
 	error([mfilename ': ' os_type ' is unknown computer'])
 end
-
 
 % full path
 p = [rootp uname filesep];
@@ -127,7 +116,6 @@ end
 %% 	add paths
 %--------------------------------------------------------------------------
 %--------------------------------------------------------------------------
-
 addpath(utilspath, '-BEGIN');
 addpath(hpcalpath, '-BEGIN');
 addpath(miccalpath, '-BEGIN');
@@ -146,5 +134,4 @@ for n = 1:length(TOOLBOX_NAMES)
 	% add path
 	addpath(tmppath, '-BEGIN');
 end
-
 

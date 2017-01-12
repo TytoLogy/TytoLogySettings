@@ -1,9 +1,9 @@
-function out = NICal_Configuration
+function out = SpeakerCal_Configuration
 %------------------------------------------------------------------------
-% out = NICal_Configuration
+% out = SpeakerCal_Configuration
 %------------------------------------------------------------------------
 % 
-% Sets initial configuration for the NICal program
+% Sets initial configuration for the SpeakerCal program
 % 
 % Comment out/in the settings for your configuration!
 % 
@@ -32,11 +32,6 @@ function out = NICal_Configuration
 %	8 Nov, 2010 (SJS): 
 % 		-	updated for SingleMicCal
 %		-	added IOINIFUNCTION
-%	9 July, 2012 (SJS)
-% 	 -	 created NICal_Configuration from SpeakerCal_Configuration
-%	14 Oct 2014 (SJS):
-%	 -	some cleanup
-%	 -	added settings for data output path
 %--------------------------------------------------------------------------
 % TO DO:	there's gotta be a better way to manage 
 % 			different hardware setups.... HELP!!!!  
@@ -47,55 +42,27 @@ function out = NICal_Configuration
 % COMMENT OUT THE INAPPROPRIATE BITS!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 %------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% This is for using National instruments
-% board and Data Acq Toolbox for 
-% sound input and output 
+% This is for using RZ_6 for sound input and output 
 %
-% Used for Calibration system, NEOMED Auditory Group
+% Used for Merri Rosen's lab and should also work
+% for Sanes lab setups
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-out.CONFIGNAME = 'NI';
-out.IOFUNCTION = @nidaq_calibration_io;
-out.IOINITFUNCTION = @nidaq_aiao_init;
-out.TYTOLOGY_ROOT_PATH = 'C:\TytoLogy';
-<<<<<<< HEAD
-out.TYTOLOGY_SETTINGS_PATH = 'C:\TytoLogy\TytoLogySettings\';
-=======
+out.CONFIGNAME = 'RZ6';
+out.IOFUNCTION = @RZ6calibration_io;
+out.IOINITFUNCTION = @RZ6init;
+out.TYTOLOGY_ROOT_PATH = 'X:\Code\Matlab\dev\TytoLogy';
 out.TYTOLOGY_SETTINGS_PATH = TytoLogySettingsPath;
->>>>>>> master
 out.TDTLOCKFILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
-out.CIRCUIT_PATH = '';
-out.CIRCUIT_NAME = '';
+out.CIRCUIT_PATH = 'X:\Code\Matlab\dev\TytoLogy\Toolbox\TDTToolbox\Circuits\RZ6\100KHz';
+out.CIRCUIT_NAME = 'RZ6_SpeakerOutputMicInput_zBus';
 out.IODEVNUM = 1;
 out.BK_PRESSURE_FILE = '';
-out.ATTENFUNCTION = @simPA5setatten;
-out.DEFAULT_OUTPUT_PATH = 'D:\';
 %------------------------------------------------------------------------
-
-
-% %------------------------------------------------------------------------
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% % This is for using RZ_6 for sound input and output 
-% %
-% % Used for Merri Rosen's lab and should also work
-% % for Sanes lab setups
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% out.CONFIGNAME = 'RZ6';
-% out.IOFUNCTION = @RZ6calibration_io;
-% out.IOINITFUNCTION = @RZ6init;
-% out.TYTOLOGY_ROOT_PATH = 'X:\Code\Matlab\dev\TytoLogy';
-% out.TYTOLOGY_SETTINGS_PATH = TytoLogySettingsPath;
-% out.TDTLOCKFILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
-% out.CIRCUIT_PATH = 'X:\Code\Matlab\dev\TytoLogy\Toolbox\TDTToolbox\Circuits\RZ6\100KHz';
-% out.CIRCUIT_NAME = 'RZ6_SpeakerOutputMicInput_zBus';
-% out.IODEVNUM = 1;
-% out.BK_PRESSURE_FILE = '';
-% %------------------------------------------------------------------------
 
 
 % %------------------------------------------------------------------------
