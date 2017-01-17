@@ -31,11 +31,11 @@
 %--------------------------------------------------------------------------
 % define Toolboxes to include in path
 TOOLBOX_NAMES =	{	'UtilitiesToolbox', ...
-	'AudioToolbox', ...
-					'BinaryFileToolbox', ...
-					'structDlgToolbox', ...
-					'TytoLogyToolbox', ...
-                 };
+							'AudioToolbox', ...
+							'BinaryFileToolbox', ...
+							'structDlgToolbox', ...
+							'TytoLogyToolbox', ...
+							  };
 
 % get os type (mac, pcwin, linux)
 % as there are different paths depending on OS
@@ -45,7 +45,7 @@ os_type = computer;
 if ispc
 	uname = getenv('USERNAME');
 	%***** for installed version
-	PCWINroot = 'C:\TytoLogy\TytoLogySettings\';
+	PCWINroot = 'C:\TytoLogy\Toolboxes\TytoLogySettings\';
 	% for sharad's dev tree
 	% PCWINroot = ['C:\Users\' uname '\Code\Matlab\TytoLogy\TytoLogySettings\'];
 	% root drive for pc
@@ -58,7 +58,7 @@ if ispc
 	rootp = PCWINroot;
 elseif ismac
 	uname = getenv('USER');
-	MACroot = ['/Users/' uname '/Work/Code/Matlab/dev/TytoLogy/TytoLogySettings/'];
+	MACroot = ['/Users/' uname '/Work/Code/Matlab/dev/TytoLogy/Toolboxes/TytoLogySettings/'];
 	TYTOBASE = ['/Users/' uname '/Work/Code/Matlab/dev/TytoLogy'];
 	TOOLBASE = ['/Users/' uname '/Work/Code/Matlab/dev/Toolboxes'];
 	rootp = MACroot;
@@ -76,22 +76,6 @@ p = [rootp uname filesep];
 
 % 	Define some paths to toolbox, calibration, HPSearch
 if ispc
-<<<<<<< HEAD
-	% Utils path
-	utilspath = [TOOLBASE '\UtilitiesToolbox\GeneralUtilities'];
-	%{
-	% Headphone Calibration Path
-	hpcalpath = [TYTOBASE '\Calibration\HeadphoneCal'];
-	% Microphone Calibration Path
-	miccalpath = [TYTOBASE '\Calibration\MicrophoneCal'];
-	% Speaker Calibration Path
-	spkrcalpath = [TYTOBASE '\Calibration\SpeakerCal'];
-	% HPSearch Path
-	hpsearchpath = {	[TYTOBASE '\Experiments\HPSearch']	, ...
-							[TYTOBASE '\Experiments\HPSearch\Functions']	, ...
-						};
-	%}
-=======
 % 	% Utils path
  	utilspath = [TOOLBASE '\UtilitiesToolbox\GeneralUtilities'];
 % 	% Headphone Calibration Path
@@ -104,14 +88,12 @@ if ispc
 % 	hpsearchpath = {	[TYTOBASE '\Experiments\HPSearch']	, ...
 % 							[TYTOBASE '\Experiments\HPSearch\Functions']	, ...
 % 						};
->>>>>>> master
 	% NICal Calibration Path
 	nicalpath = [TYTOBASE '\Calibration\NICal'];
 	% FlatWav Calibration Path
 	flatwavpath = [TYTOBASE '/Calibration/FlatWav'];	
 
 else
-<<<<<<< HEAD
 	% Utils path
 	utilspath = [TOOLBASE '/UtilitiesToolbox/GeneralUtilities'];
 	%{
@@ -126,20 +108,6 @@ else
 							[TYTOBASE '/Experiments/HPSearch/Functions']	, ...
 						};
 	%}
-=======
-% 	% Utils path
-% 	utilspath = [TOOLBASE '/UtilitiesToolbox/GeneralUtilities'];
-% 	% Headphone Calibration Path
-% 	hpcalpath = [TYTOBASE '/Calibration/HeadphoneCal'];
-% 	% Microphone Calibration Path
-% 	miccalpath = [TYTOBASE '/Calibration/MicrophoneCal'];
-% 	% Speaker Calibration Path
-% 	spkrcalpath = [TYTOBASE '/Calibration/SpeakerCal'];
-% 	% HPSearch Path
-% 	hpsearchpath = {	[TYTOBASE '/Experiments/HPSearch']	, ...
-% 							[TYTOBASE '/Experiments/HPSearch/Functions']	, ...
-% 						};
->>>>>>> master
 	% NICal Calibration Path
 	nicalpath = [TYTOBASE '/Calibration/NICal'];	
 	% FlatWav Calibration Path
@@ -152,11 +120,7 @@ end
 %--------------------------------------------------------------------------
 %--------------------------------------------------------------------------
 
-<<<<<<< HEAD
-addpath(utilspath, '-BEGIN');
-=======
  addpath(utilspath, '-BEGIN');
->>>>>>> master
 % addpath(hpcalpath, '-BEGIN');
 % addpath(miccalpath, '-BEGIN');
 % %addpath(spkrcalpath, '-BEGIN');

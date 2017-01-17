@@ -61,11 +61,7 @@ out.CONFIGNAME = 'NI';
 out.IOFUNCTION = @nidaq_calibration_io;
 out.IOINITFUNCTION = @nidaq_aiao_init;
 out.TYTOLOGY_ROOT_PATH = 'C:\TytoLogy';
-<<<<<<< HEAD
-out.TYTOLOGY_SETTINGS_PATH = 'C:\TytoLogy\TytoLogySettings\';
-=======
 out.TYTOLOGY_SETTINGS_PATH = TytoLogySettingsPath;
->>>>>>> master
 out.TDTLOCKFILE = [out.TYTOLOGY_SETTINGS_PATH '.tdtlock.mat'];
 out.CIRCUIT_PATH = '';
 out.CIRCUIT_NAME = '';
