@@ -48,13 +48,12 @@ if ispc
 	PCWINroot = 'C:\TytoLogy\Toolboxes\TytoLogySettings\';
 	% for sharad's dev tree
 	% PCWINroot = ['C:\Users\' uname '\Code\Matlab\TytoLogy\TytoLogySettings\'];
+	% 	TYTOBASE = [TYTODRIVE ':\Users\' uname '\Code\Matlab\TytoLogy'];
+	% 	TOOLBASE = [TYTODRIVE ':\Users\' uname '\Code\Matlab\TytoLogy\Toolboxes'];
 	% root drive for pc
 	TYTODRIVE = 'C';
 	TYTOBASE = [TYTODRIVE ':\TytoLogy'];
 	TOOLBASE = [TYTODRIVE ':\TytoLogy\Toolboxes'];
-
-% 	TYTOBASE = [TYTODRIVE ':\Users\' uname '\Code\Matlab\TytoLogy'];
-% 	TOOLBASE = [TYTODRIVE ':\Users\' uname '\Code\Matlab\TytoLogy\Toolboxes'];
 	rootp = PCWINroot;
 elseif ismac
 	uname = getenv('USER');
