@@ -14,3 +14,5 @@ Desktop.ini
 
 # .asv files (matlab backup files)
 *.asv
+.DS_Store
+sshanbhag/.DS_Store
