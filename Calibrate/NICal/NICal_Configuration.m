@@ -40,6 +40,7 @@ function out = NICal_Configuration
 %	14 Mar 2017 (SJS):
 %	 - added settings for use with DAQ toolbox Session interface
 %		(copied from sshanbhag's settings)
+%	6 Jun 2018 (SJS): post crash check
 %--------------------------------------------------------------------------
 % TO DO:	there's gotta be a better way to manage 
 % 			different hardware setups.... HELP!!!!  
