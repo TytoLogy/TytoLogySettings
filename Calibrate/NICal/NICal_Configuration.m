@@ -41,7 +41,7 @@ function out = NICal_Configuration
 %	 - added settings for use with DAQ toolbox Session interface
 %		(copied from sshanbhag's settings)
 %	6 Jun 2018 (SJS): post crash check
-%	24 Aug 2018 (SJS):changed DEFAULT_OUTPUT_PATH to F:\Users\Calibrate\Data
+%	24 Aug 2018 (SJS):changed DEFAULT_OUTPUT_PATH to F:\Data2\Calibrate
 %--------------------------------------------------------------------------
 % TO DO:	there's gotta be a better way to manage 
 % 			different hardware setups.... HELP!!!!  
@@ -74,7 +74,7 @@ out.IODEVNUM = 1;
 out.BK_PRESSURE_FILE = '';
 out.ATTENFUNCTION = @simPA5setatten;
 % out.DEFAULT_OUTPUT_PATH = pwd;
-out.DEFAULT_OUTPUT_PATH = 'F:\Users\Calibrate\Data';
+out.DEFAULT_OUTPUT_PATH = 'F:\Data2\Calibrate';
 %------------------------------------------------------------------------
 
 
